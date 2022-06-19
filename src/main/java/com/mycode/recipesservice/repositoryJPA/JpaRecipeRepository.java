@@ -1,6 +1,6 @@
 package com.mycode.recipesservice.repositoryJPA;
 
-import static javax.transaction.Transactional.TxType.MANDATORY;
+import static javax.transaction.Transactional.TxType.REQUIRED;
 
 import java.util.List;
 
@@ -21,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 
 @Repository
 @RequiredArgsConstructor
+@Transactional(REQUIRED)
 public class JpaRecipeRepository implements RecipeRespository {
 
     private final RecipeEntityRespository recipeEntityRespository;
